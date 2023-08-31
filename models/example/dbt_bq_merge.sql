@@ -1,6 +1,7 @@
 {{
   config(
-    materialized='incremental',
+    materialized='table',
+    schema='dbt_rchester',
     unique_key='state'
   )
 }}
