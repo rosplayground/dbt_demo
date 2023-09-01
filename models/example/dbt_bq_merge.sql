@@ -1,11 +1,6 @@
-{{
-  config(
-    materialized='table',
-    schema='dbt_rchester',
-    unique_key='state'
-  )
-}}
-MERGE INTO {{ ref('dbt_bq_demo') }} AS target
+{{ config(materialized="incremental", unique_key="state", overwrite=False) }}
+
+MERGE INTO `extreme-quasar-397510.dbt_rchester.dbt_bq_demo` AS target
 USING (
   WITH state_births AS (
     SELECT

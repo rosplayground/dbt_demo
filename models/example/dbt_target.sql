@@ -15,4 +15,4 @@ SELECT
   total_marriages,
   total_divorces
 FROM
-  extreme-quasar-397510.dbt_rchester.dbt_bq_demo
+  `extreme-quasar-397510.dbt_rchester.dbt_bq_demo`
